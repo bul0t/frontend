@@ -5,10 +5,16 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+h1 {
+    color: #34495e;
+    font-size: 32px;
+    font-family: 'Ubuntu Mono', monospace;
+    margin-bottom: 32px;
+}
 
 .list {
     color: #34495e;
-    font-size: 22px;
+    font-size: 24px;
     font-family: 'Ubuntu Mono', monospace;
 }
 .list ul {
