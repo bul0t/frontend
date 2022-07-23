@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.list {
+    color: #34495e;
+    font-size: 22px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+.list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.list__folder {
+    cursor: pointer;
+    background-image: url(list__plus.png);
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 32px;
+}
+.list__folder--open {
+    background-image: url(list__minus.png);
+}
+.list__folder > ul {
+    display: none;
+}
+.list__folder--open > ul {
+    display: block;
+}
+.list__element {
+    cursor: text;
+    padding-left: 32px;
+}
