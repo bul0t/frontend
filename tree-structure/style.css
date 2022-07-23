@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+/* common */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -11,10 +11,21 @@ h1 {
     font-family: 'Ubuntu Mono', monospace;
     margin-bottom: 32px;
 }
-
-.list {
-    color: #34495e;
+.link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.link a {
+    color: #9b59b6;
     font-size: 24px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+.link a:hover {
+    color: #8e44ad;
+}
+
+/* list */
+.list {
     font-family: 'Ubuntu Mono', monospace;
 }
 .list ul {
@@ -23,16 +34,22 @@ h1 {
     list-style: none;
 }
 .list__folder {
+    color: #2c3e50;
+    font-size: 24px;
     cursor: pointer;
-    background-image: url(list__plus.png);
+    background-image: url('list__sprites.png');
     background-repeat: no-repeat;
-    background-size: 23px 23px;
+    background-position-x: -10px;
+    background-position-y: -10px;
     margin-top: 4px;
     margin-bottom: 4px;
     padding-left: 32px;
 }
 .list__folder--open {
-    background-image: url(list__minus.png);
+    background-image: url('list__sprites.png');
+    background-repeat: no-repeat;
+    background-position-x: -10px;
+    background-position-y: -54px;
 }
 .list__folder > ul {
     display: none;
@@ -41,6 +58,8 @@ h1 {
     display: block;
 }
 .list__element {
+    color: #34495e;
+    font-size: 20px;
     cursor: text;
     padding-left: 32px;
 }
