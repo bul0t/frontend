@@ -1,6 +1,7 @@
 # Tree structure
-Проект tree structure. Исходный код.
+Проект tree structure, исходный код.
 
-Стек: HTML, CSS, JavaScript, БЭМ
+**Стек:** HTML, CSS, JavaScript, БЭМ  
+**Время выполнения:** 1.5 часа
 
 [Демо](https://bul0t.github.io/frontend/tree-structure/)
