@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог продукции</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1 class="title">Каталог продукции</h1>
+      <div class="row">
+        <div class="col col--sidebar">
+          <div class="menu">
+            <input class="input menu__element js-autocomplete" type="text" placeholder="Введите название детали" />
+            <button class="button menu__element js-sort-az">от А до Я</button>
+            <button class="button menu__element js-sort-za">от Я до А</button>
+            <button class="button menu__element js-sort-price-az">Цена от наименьшего</button>
+            <button class="button menu__element js-sort-price-za">Цена от наибольшего</button>
+            <button class="button menu__element js-show-10">Показать 10</button>
+            <button class="button menu__element js-show-30">Показать 30</button>
+            <button class="button menu__element js-show-all">Показать все</button>
+            <button class="button menu__element js-show-stock">Показать по наличию на складе</button>
+          </div> <!-- menu -->
+        </div>
+        <div class="col col--main">
+          <div class="list">
+            <div class="list__header">
+              <h2 class="list__title">Вывод товаров</h2>
+            </div>
+            <div class="list__container js-show-elements"></div> <!-- list__container -->
+          </div> <!-- list -->
+        </div> <!-- col -->
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </div> <!-- wrapper -->
+  <script type="module" src="index.js"></script>
+</body>
+</html>
