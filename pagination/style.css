@@ -1,0 +1,41 @@
+.container {
+  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.list {
+
+}
+
+.list__number {
+  font-size: 12px;
+}
+
+.item {
+  padding: 8px 16px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#pagination button {
+  color: #FFFFFF;
+  background-color: #3498db;
+  width: 50px;
+  height: 50px;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 8px;
+}
+#pagination button:hover {
+  background-color: #2980b9;
+}

@@ -2,4 +2,5 @@
 - slick.js (слайдер)
 - fancybox.js (модальное окно)
 - tree structure (древовидная структура)
-- catalog json (Фильтр каталог JSON)
+- catalog json (фильтр каталог JSON)
+- pagination (пагинация для каталога)

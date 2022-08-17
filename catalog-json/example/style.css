@@ -87,6 +87,26 @@ body {
 }
 .list__title {
     margin: 0;
+    margin-bottom: 8px;
+}
+.list__amount {
+    margin-bottom: 8px;
+}
+.list__amount span, .list__amount-page span {
+    color: #fff;
+    background-color: #e74c3c;
+    padding-top: 1px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Пагинация */
+.pagination {
+    margin-bottom: 24px;
 }
 
 /* Элемент */

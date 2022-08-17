@@ -1,9 +1,27 @@
 export default function (data) {
   const jsShowElements = document.querySelector('.js-show-elements')
-  jsShowElements.innerHTML = ''
+  const listHeader = document.querySelector('.js-list-header')
+  const pagination = document.querySelector('.js-pagination')
 
+  /* Работаем с количеством товаров */
+  listHeader.innerHTML = ''
+  const listHeaderTemplate = `
+    <h2 class="list__title">Вывод товаров</h2>
+    <div class="list__amount">Всего элементов <span>${data.length}</span> шт.</div>
+    <div class="list__amount-page">На странице <span>${data.length}</span> шт.</div>`
+  listHeader.insertAdjacentHTML('afterbegin', listHeaderTemplate)
+
+  /* Работаем с пагинацией */
+  pagination.innerHTML = ''
+  const paginationTemplate = `
+    <div class="pagination__element">Пагинация</div>`
+  pagination.insertAdjacentHTML('afterbegin', paginationTemplate)
+
+  // Выводим элементы
+  jsShowElements.innerHTML = ''
   data.forEach(elem => {
     if (!elem.Image) elem.Image = "https://avtoalfa.com/img/icons/no_photo.svg"
+
     const elementTemplate = `
       <div class="element">
         <div class="element__img">
