@@ -6,9 +6,7 @@
   margin: 0 auto;
 }
 
-.list {
-
-}
+.list {}
 
 .list__number {
   font-size: 12px;
@@ -19,12 +17,12 @@
   border-bottom: 1px solid #CCCCCC;
 }
 
-#pagination {
+.pagination {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-#pagination button {
+.pagination__element {
   color: #FFFFFF;
   background-color: #3498db;
   width: 50px;
@@ -36,6 +34,6 @@
   margin: 5px;
   border-radius: 8px;
 }
-#pagination button:hover {
+.pagination__element:hover {
   background-color: #2980b9;
 }

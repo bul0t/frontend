@@ -1,5 +1,5 @@
-const list_element = document.getElementById('list') // контейнер для элементов
-const pagination_element = document.getElementById('pagination') // контейнер для элементов пагинации
+const jsShowElements = document.querySelector('.js-show-elements') // контейнер для элементов
+const pagination = document.querySelector('.js-pagination') // контейнер для элементов пагинации
 
 let current_page = 1 // текущая страница, на которой мы находимся
 let rows = 30 // количество элементов на странице
@@ -8,61 +8,79 @@ let rows = 30 // количество элементов на странице
 
 const request = fetch(`data.json`)
   .then(response => response.json())
-  .then(list_items => {
-    function displayList(items, wrapper, rows_per_page, page) {
-      wrapper.innerHTML = ''
-      page--
+  .then(data => {
+    function displayList(data, jsShowElements, rows, current_page) {
+      jsShowElements.innerHTML = ''
+      current_page--
 
-      let start = rows_per_page * page
-      let end = start + rows_per_page
-      let paginatedItems = items.slice(start, end)
+      let start = rows * current_page
+      let end = start + rows
+      let paginatedItems = data.slice(start, end)
 
       paginatedItems.forEach((elem, i) => {
-        console.log(elem.Name)
-        let template = `
-          <div class="item">${elem.Name} - (${elem.Manufacturer_ID})</div>
+        if (!elem.Image) elem.Image = "https://avtoalfa.com/img/icons/no_photo.svg"
+
+        const elementTemplate = `
+          <div class="element">
+            <div class="element__img">
+              <img src="${elem.Image}" width="204" height="136" />
+            </div> <!-- element__img -->
+            <div class="element__description">
+              <div class="element__name">${elem.Name}</div>
+              <div class="element__manufacturer">
+                <img class="element__manufacturer-logo" src="${elem.logo}" />
+                <div class="element__manufacturer-txt">${elem.Manufacturer}</div>
+              </div>
+              <div class="element__articul"><b>Артикул:</b> ${elem.Articul}</div>
+            </div> <!-- element__description -->
+            <div class="element__sale">
+              <div class="element__price">${elem.Price}</div>
+              <div class="element__your-price">Ваша цена</div>
+              <div class="cart">
+                <div class="stock">
+                  <div class="stock__description">На складе:</div>
+                  <div class="stock__amount">${elem.Stock} ${elem.unit}.</div>
+                </div> <!-- stock -->
+                <div class="count">
+                  <div class="count__wrap">
+                    <button class="count__minus button">&ndash;</button>
+                    <input class="count__in" type="text" value="1" />
+                    <button class="count__plus button">+</button>
+                  </div>
+                  <button class="count__cart button">В корзину</button>
+                </div> <!-- count -->
+              </div> <!-- cart -->
+            </div> <!-- element__sale -->
+          </div> <!-- element -->
         `
-        wrapper.insertAdjacentHTML('beforeend', template)
+        jsShowElements.insertAdjacentHTML('beforeend', elementTemplate)
       })
     }
 
-    function setupPagination(items, wrapper, rows_per_page) {
-      wrapper.innerHTML = ''
+    function setupPagination(data, pagination, rows) {
+      pagination.innerHTML = ''
+      let page_count = Math.ceil(data.length / rows);
 
-      let page_count = Math.ceil(items.length / rows_per_page);
-      
       for (let i = 1; i < page_count + 1; i++) {
-        let btn = paginationButton(i, items)
-        wrapper.appendChild(btn)
+        let btn = paginationButton(i, data)
+        pagination.appendChild(btn)
       }
     }
 
-    function paginationButton (page, items) {
+    function paginationButton (i, data) {
       let button = document.createElement('button')
-      button.innerText = page
-      if (current_page == page) button.classList.add('active')
+      button.classList.add('pagination__element')
+      button.innerText = i
+      if (current_page == i) button.classList.add('active')
 
       button.addEventListener('click', function() {
-        current_page = page
-        displayList(items, list_element, rows, current_page)
+        current_page = i
+        displayList(data, jsShowElements, rows, current_page)
       })
 
       return button
     }
 
-    displayList(list_items, list_element, rows, current_page)
-    setupPagination(list_items, pagination_element, rows)
-
+    displayList(data, jsShowElements, rows, current_page)
+    setupPagination(data, pagination, rows)
   })
-
-// list_items > items - массив
-// list_element > - контейнер для элементов
-// rows - количество элементов на странице
-// current_page - текущая страница
-
-// items.forEach((elem, i) => {
-//   let template = `
-//     <div class="item"><span class="list__number">${++i}</span> ${elem.Name}</div>
-//   `
-//   wrapper.insertAdjacentHTML('beforeend', template)
-// })

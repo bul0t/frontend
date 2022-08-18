@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+/* Общие стили */
+body {
+    color: #34495e;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Сетка */
+.container {
+    border: 3px solid #ecf0f1;
+    border-radius: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 64px;
+    margin-top: 32px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+.row {
+    display: flex;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+.col {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.col--sidebar {
+    width: 300px;
+}
+.col--main {
+    width: 900px;
+}
+
+/* Кнопки */
+.button {
+    border: none;
+    color: #ffffff;
+    background-color: #34495e;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.button:hover {
+    background-color: #2c3e50;
+}
+
+/* Инпуты */
+.input {
+    border: none;
+    outline: none;
+    max-width: 100%;
+    color: #34495e;
+    font-size: 16px;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+/* Заголовок */
+.title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* Меню */
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.menu__element {
+    margin-bottom: 8px;
+}
+
+/* Список элементов */
+.list__header {
+    margin-bottom: 24px;
+}
+.list__title {
+    margin: 0;
+    margin-bottom: 8px;
+}
+.list__amount {
+    margin-bottom: 8px;
+}
+.list__amount span, .list__amount-page span {
+    color: #fff;
+    background-color: #e74c3c;
+    padding-top: 1px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.pagination__element {
+    color: #FFFFFF;
+    background-color: #3498db;
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 8px;
+}
+.pagination__element:hover {
+    background-color: #2980b9;
+}
+
+/* Элемент */
+.element {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid #ecf0f1;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+/* element__img */
+.element__img {
+    width: 204px;
+    display: flex;
+    margin-right: 16px;
+}
+.element__img img {
+    border-radius: 16px;
+}
+
+/* element__description */
+.element__description {
+    flex-grow: 1;
+    margin-right: 16px
+}
+.element__name {
+    color: #3498db;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.element__manufacturer {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.element__manufacturer-logo {
+    margin-right: 8px;
+}
+.element__articul {
+    font-size: 14px;
+}
+
+/* element__sale */
+.element__sale {
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ecf0f1;
+    border-radius: 16px;
+    padding: 8px;
+}
+.element__price {
+    color: #e74c3c;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.element__your-price {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.stock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stock__description {
+    font-size: 12px;
+}
+.stock__amount {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* count */
+.count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.count__wrap {
+    display: flex;
+    margin-bottom: 4px;
+}
+.count__minus {
+    font-size: 12px;
+    line-height: 12px;
+    border-radius: 0;
+    padding: 4px 8px;
+}
+.count__in {
+    color: #34495e;
+    text-align: center;
+    border: none;
+    outline: none;
+    border: 1px solid #ecf0f1;
+    max-width: 32px;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px;
+}
+.count__in:focus {
+    outline: 1px solid #bdc3c7;
+}
+.count__plus {
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px 8px;
+}
+.count__cart {
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px 8px;
+    width: 87px;
+    height: 25px;
+}
