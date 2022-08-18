@@ -4,6 +4,7 @@ export default function() {
   const request = fetch(`data.json`)
     .then(response => response.json())
     .then(data => {
-      templateLoop(data)
+      let rows = 30
+      templateLoop(data, rows)
     })
 }

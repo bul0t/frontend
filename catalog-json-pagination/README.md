@@ -6,4 +6,4 @@
 - модули ES6
 - Promise (fetch(), then())
 
-[Демо](https://bul0t.github.io/frontend/catalog-json/example/)
+[Демо](https://bul0t.github.io/frontend/catalog-json-pagination/example/)
