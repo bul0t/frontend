@@ -1,4 +1,4 @@
-import showElements from './templateLoop.js'
+import templateLoop from './templateLoop.js'
 
 export default function() {
   const request = fetch(`data.json`)
