@@ -8,6 +8,7 @@ export default function(value) {
         const regex = new RegExp(`^${value}`, 'gi')
         return elem.Name.match(regex)
       })
-      templateLoop(dataAutocomplete)
+      let rows = 30
+      templateLoop(dataAutocomplete, rows)
     })
 }
