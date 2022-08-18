@@ -1,9 +1,15 @@
 # Каталог товаров
-Проект: каталог товаров, фильтрация и сортировка товаров на JavaScript. Данные: JSON-файл.
+Проект: каталог товаров.
+- фильтрация,
+- сортировка,
+- автокомплит,
+- пагинация
+
+Данные: JSON-файл.
 
 Что использовано:
 - БЭМ
 - модули ES6
-- Promise (fetch(), then())
+- JavaScript, Promise `fetch()`, `then()`
 
 [Демо](https://bul0t.github.io/frontend/catalog-json-pagination/example/)
